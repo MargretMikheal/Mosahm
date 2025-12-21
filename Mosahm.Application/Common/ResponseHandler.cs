@@ -1,9 +1,7 @@
 ﻿using Microsoft.Extensions.Localization;
 using Mosahm.Application.Resources;
-using System;
 using System.Collections.Generic;
 using System.Net;
-using System.Text;
 
 namespace Mosahm.Application.Common
 {
@@ -15,26 +13,25 @@ namespace Mosahm.Application.Common
         {
             _localizer = localizer;
         }
-
         public Response<T> Success<T>(T data, string message = null)
         {
-            return new Response<T>(data, message ?? _localizer[SharedResourcesKeys.Success])
+            return new Response<T>(data, message ?? _localizer[SharedResourcesKeys.General.Success])
             {
-                StatusCode = HttpStatusCode.OK,
+                StatusCode = HttpStatusCode.OK
             };
         }
 
         public Response<T> Created<T>(T data)
         {
-            return new Response<T>(data, _localizer[SharedResourcesKeys.Created])
+            return new Response<T>(data, _localizer[SharedResourcesKeys.General.Created])
             {
-                StatusCode = HttpStatusCode.Created,
+                StatusCode = HttpStatusCode.Created
             };
         }
 
         public Response<T> Deleted<T>()
         {
-            return new Response<T>(_localizer[SharedResourcesKeys.Deleted], succeeded: true)
+            return new Response<T>(_localizer[SharedResourcesKeys.General.Deleted], succeeded: true)
             {
                 StatusCode = HttpStatusCode.OK
             };
@@ -42,7 +39,7 @@ namespace Mosahm.Application.Common
 
         public Response<T> NotFound<T>(string message = null, Dictionary<string, List<string>> errors = null)
         {
-            return new Response<T>(message ?? _localizer[SharedResourcesKeys.NotFound])
+            return new Response<T>(message ?? _localizer[SharedResourcesKeys.User.NotFound])
             {
                 Errors = errors,
                 StatusCode = HttpStatusCode.NotFound
@@ -51,7 +48,7 @@ namespace Mosahm.Application.Common
 
         public Response<T> Unauthorized<T>(string message = null, Dictionary<string, List<string>> errors = null)
         {
-            return new Response<T>(message ?? _localizer[SharedResourcesKeys.Unauthorized], succeeded: false)
+            return new Response<T>(message ?? _localizer[SharedResourcesKeys.Auth.Unauthorized], succeeded: false)
             {
                 Errors = errors,
                 StatusCode = HttpStatusCode.Unauthorized
@@ -60,7 +57,7 @@ namespace Mosahm.Application.Common
 
         public Response<T> BadRequest<T>(string message = null, Dictionary<string, List<string>> errors = null)
         {
-            return new Response<T>(message ?? _localizer[SharedResourcesKeys.BadRequest])
+            return new Response<T>(message ?? _localizer[SharedResourcesKeys.Validation.BadRequest])
             {
                 Errors = errors,
                 StatusCode = HttpStatusCode.BadRequest
@@ -69,18 +66,21 @@ namespace Mosahm.Application.Common
 
         public Response<T> UnprocessableEntity<T>(Dictionary<string, List<string>> errors, string message = null)
         {
-            return new Response<T>(message ?? _localizer[SharedResourcesKeys.UnprocessableEntity], succeeded: false)
+            return new Response<T>(
+                message ?? _localizer[SharedResourcesKeys.Validation.UnprocessableEntity],
+                succeeded: false)
             {
                 Errors = errors,
-                StatusCode = HttpStatusCode.UnprocessableEntity,
+                StatusCode = HttpStatusCode.UnprocessableEntity
             };
         }
+
         public Response<T> ValidationErrors<T>(Dictionary<string, List<string>> errors, string message = null)
         {
             return new Response<T>
             {
                 Succeeded = false,
-                Message = message ?? "Validation errors occurred",
+                Message = message ?? _localizer[SharedResourcesKeys.Validation.UnprocessableEntity],
                 Errors = errors,
                 StatusCode = HttpStatusCode.BadRequest
             };

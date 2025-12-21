@@ -36,7 +36,6 @@ namespace Mosahm.Application.Behaviors
 
                 if (failures.Count != 0)
                 {
-                    // Group errors by property name and localize messages if resource exists
                     var errorDict = failures
                         .GroupBy(f => string.IsNullOrWhiteSpace(f.PropertyName) ? "_" : f.PropertyName)
                         .ToDictionary(
@@ -48,7 +47,7 @@ namespace Mosahm.Application.Behaviors
                             }).ToList()
                         );
 
-                    var message = _localizer?[SharedResourcesKeys.UnprocessableEntity] ?? "Unprocessable entity";
+                    var message = _localizer?[SharedResourcesKeys.Validation.UnprocessableEntity] ?? "Unprocessable entity";
                     throw new ValidationExceptionWithErrors(message, errorDict);
                 }
             }

@@ -1,24 +1,19 @@
+using Mosahm.Api.Extensions;
+using Mosahm.Application;
+using Mosahm.Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 
-builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
-builder.Services.AddApplicationInsightsTelemetry();
+builder.Services
+    .AddApiServices()
+    .AddApplicationServices()
+    .AddInfrastructureServices(builder.Configuration)
+    .AddSwaggerDocumentation();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-}
 
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
-
-app.MapControllers();
+app.UseApiPipeline();
 
 app.Run();

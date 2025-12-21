@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Added" xml:space="preserve">
-    <value>added successfuly</value>
-  </data>
   <data name="Address" xml:space="preserve">
     <value>address</value>
   </data>
@@ -127,10 +124,10 @@
     <value>Bad Request</value>
   </data>
   <data name="Created" xml:space="preserve">
-    <value>Created</value>
+    <value>Resource created successfully</value>
   </data>
   <data name="Deleted" xml:space="preserve">
-    <value>object Deleted</value>
+    <value>Resource deleted successfully</value>
   </data>
   <data name="NotExist" xml:space="preserve">
     <value>Not Exist</value>
@@ -138,17 +135,17 @@
   <data name="Error" xml:space="preserve">
     <value>Error</value>
   </data>
-  <data name="Exists" xml:space="preserve">
-    <value>Exists</value>
+  <data name="AlreadyExists" xml:space="preserve">
+    <value>Resource already exists</value>
   </data>
   <data name="Invalid" xml:space="preserve">
-    <value>Invalid</value>
+    <value>Invalid value</value>
   </data>
   <data name="Name" xml:space="preserve">
     <value>Name</value>
   </data>
   <data name="NoContent" xml:space="preserve">
-    <value>No Content</value>
+    <value>No content available</value>
   </data>
   <data name="NotFound" xml:space="preserve">
     <value>Object is not found</value>
@@ -160,25 +157,25 @@
     <value>This Field is Required</value>
   </data>
   <data name="Success" xml:space="preserve">
-    <value>Success</value>
+    <value>Operation completed successfully</value>
   </data>
   <data name="Unauthorized" xml:space="preserve">
-    <value>Un authorized</value>
+    <value>Unauthorized access</value>
   </data>
   <data name="UnprocessableEntity" xml:space="preserve">
-    <value>Unprocessable Entity</value>
+    <value>Validation errors occurred</value>
   </data>
   <data name="Updated" xml:space="preserve">
-    <value>Updated</value>
+    <value>Resource updated successfully</value>
   </data>
   <data name="PasswordsDoNotMatch" xml:space="preserve">
     <value>Passwords Do Not Match</value>
   </data>
   <data name="EmailAlreadyTaken" xml:space="preserve">
-    <value>Email Already Taken</value>
+    <value>Email is already in use</value>
   </data>
   <data name="UserNameAlreadyTaken" xml:space="preserve">
-    <value>User Name Already Taken</value>
+    <value>Username is already taken</value>
   </data>
   <data name="FailedToAddUser" xml:space="preserve">
     <value>Failed To Add User</value>
@@ -201,20 +198,20 @@
   <data name="RefreshTokenExpired" xml:space="preserve">
     <value>Refresh Token Expired</value>
   </data>
-  <data name="UserIsNotFound" xml:space="preserve">
-    <value>User Is Not Found</value>
+  <data name="UserNotFound" xml:space="preserve">
+    <value>User Not Found</value>
   </data>
   <data name="InvalidToken" xml:space="preserve">
-    <value>Invalid Token</value>
+    <value>Invalid authentication token</value>
   </data>
   <data name="RoleUsed" xml:space="preserve">
     <value>Role Used</value>
   </data>
   <data name="FailedToUpdate" xml:space="preserve">
-    <value>Failed To Update </value>
+    <value>Failed to update data</value>
   </data>
-  <data name="FailedToAddNewValue" xml:space="preserve">
-    <value>Failed To Add New Value</value>
+  <data name="FailedToAdd" xml:space="preserve">
+    <value>Failed to add data</value>
   </data>
   <data name="FailedToRemoveOldValues" xml:space="preserve">
     <value>Failed To Remove Old Values</value>
@@ -225,8 +222,8 @@
   <data name="FailedToSendEmail" xml:space="preserve">
     <value>Failed To Send Email</value>
   </data>
-  <data name="EmailIsNotConfirmed" xml:space="preserve">
-    <value>Email Is Not Confirmed</value>
+  <data name="EmailNotConfirmed" xml:space="preserve">
+    <value>Email address is not confirmed</value>
   </data>
   <data name="EmailNotSent" xml:space="preserve">
     <value>Email Not Sent</value>
@@ -247,6 +244,69 @@
     <value>Failed To Reset Password</value>
   </data>
   <data name="DuplicateEntry" xml:space="preserve">
-    <value>Duplicate Entry</value>
+    <value>Duplicate entry detected</value>
+  </data>
+  <data name="OperationFailed" xml:space="preserve">
+    <value>Operation failed</value>
+  </data>
+  <data name="ActionCompleted" xml:space="preserve">
+    <value>Action completed successfully</value>
+  </data>
+  <data name="MinLength" xml:space="preserve">
+    <value>Value is shorter than allowed</value>
+  </data>
+  <data name="MaxLength" xml:space="preserve">
+    <value>Value exceeds maximum length</value>
+  </data>
+  <data name="OutOfRange" xml:space="preserve">
+    <value>Value is out of allowed range</value>
+  </data>
+  <data name="Forbidden" xml:space="preserve">
+    <value>Access forbidden</value>
+  </data>
+  <data name="LoginSuccess" xml:space="preserve">
+    <value>Logged in successfully</value>
+  </data>
+  <data name="LogoutSuccess" xml:space="preserve">
+    <value>Logged out successfully</value>
+  </data>
+  <data name="InvalidCredentials" xml:space="preserve">
+    <value>Invalid email or password</value>
+  </data>
+  <data name="TokenExpired" xml:space="preserve">
+    <value>Authentication token has expired</value>
+  </data>
+  <data name="AccountLocked" xml:space="preserve">
+    <value>Account is locked</value>
+  </data>
+  <data name="AccountDisabled" xml:space="preserve">
+    <value>Account is disabled</value>
+  </data>
+  <data name="FailedToDelete" xml:space="preserve">
+    <value>Failed to delete data</value>
+  </data>
+  <data name="ConcurrencyConflict" xml:space="preserve">
+    <value>Data was modified by another process</value>
+  </data>
+  <data name="InternalServerError" xml:space="preserve">
+    <value>Internal server error</value>
+  </data>
+  <data name="ServiceUnavailable" xml:space="preserve">
+    <value>Service is currently unavailable</value>
+  </data>
+  <data name="TooManyRequests" xml:space="preserve">
+    <value>Too many requests, please try again later</value>
+  </data>
+  <data name="PermissionDenied" xml:space="preserve">
+    <value>Permission denied</value>
+  </data>
+  <data name="RoleNotAllowed" xml:space="preserve">
+    <value>Role is not allowed to perform this action</value>
+  </data>
+  <data name="AlreadyProcessed" xml:space="preserve">
+    <value>Request already processed</value>
+  </data>
+  <data name="OperationNotAllowed" xml:space="preserve">
+    <value>Operation is not allowed</value>
   </data>
 </root>

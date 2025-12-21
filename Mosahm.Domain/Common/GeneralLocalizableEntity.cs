@@ -1,0 +1,13 @@
+﻿using System.Globalization;
+
+namespace Mosahm.Domain.Common.Localization
+{
+    public abstract class GeneralLocalizableEntity
+    {
+        protected string Localize(string ar, string en)
+        {
+            var culture = CultureInfo.CurrentCulture.TwoLetterISOLanguageName.ToLower();
+            return culture == "ar" ? ar : en;
+        }
+    }
+}
