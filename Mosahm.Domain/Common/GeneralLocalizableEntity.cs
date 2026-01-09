@@ -1,8 +1,9 @@
-﻿using System.Globalization;
+﻿using Mosahm.Domain.Entities;
+using System.Globalization;
 
 namespace Mosahm.Domain.Common.Localization
 {
-    public abstract class GeneralLocalizableEntity
+    public abstract class GeneralLocalizableEntity : BaseEntity
     {
         protected string Localize(string ar, string en)
         {

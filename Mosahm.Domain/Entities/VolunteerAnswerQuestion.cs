@@ -1,0 +1,15 @@
+﻿using System.Text.Json;
+
+namespace Mosahm.Domain.Entities
+{
+    public class VolunteerAnswerQuestion : BaseEntity
+    {
+        public Guid VolunteerId { get; set; }
+        public Volunteer Volunteer { get; set; }
+        public Guid QuestionId { get; set; }
+        public Question Question { get; set; }
+        public string? AnswerText { get; set; } 
+        public int? ChoiceKey { get; set; }
+        public JsonDocument? Json { get; set; }
+    }
+}
